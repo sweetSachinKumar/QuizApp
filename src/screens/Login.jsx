@@ -13,6 +13,10 @@ import { EmailOutlined } from "@mui/icons-material";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { Image } from "@chakra-ui/image";
+
+
+
 export default function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -62,20 +66,17 @@ export default function Login() {
     <div
       className="bg-center h-[100vh] w-[100vw] grid  items-center justify-center "
       style={{
-        background: `radial-gradient(#852222, #1a225a)  , url(${landingImage})`,
-        backgroundSize: "cover",
+        background: `radial-gradient(#852222, #1a225a)  , url(${landingImage}) no-repeat center center / cover`,
         backgroundBlendMode: "saturation",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
       }}
     >
-      <div className="grid md:grid-cols-2 items-center justify-center gap-2 w-[91vw] md:w-[70vw] h-[70vh] outline outline-white bg-white bg-opacity-30 rounded-2xl shadow shadow-white overflow-hidden">
-        <div className="hidden md:block w-full h-full bg-center grid items-center justify-center "
-         style={{background:`url(${Quiz})`,backgroundPosition:"center",backgroundRepeat:"no-repeat",backgroundSize:"120%"}} 
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-2 w-[91vw] max-w-lg h-full max-h-[85vh] lg:w-[70vw] lg:h-[70vh] lg:max-w-[1200px] lg:max-h-[560px] outline outline-white bg-white bg-opacity-30 rounded-2xl shadow shadow-white overflow-hidden">
+        <div className=" lg:flex  hidden  w-full h-full bg-center  items-center justify-center min-h-[200px] border-4 "
+         style={{background:`url(${Quiz}) no-repeat center center / cover `, }} 
          >
           {/* <Image src={Quiz} className="w-[100%]" /> */}
         </div>
-        <div className="relative flex items-center justify-center bg-white h-full w-[98vw] md:w-full bg-opacity-90 p-2 overflow-hidden"  > 
+        <div className="relative flex items-center justify-center bg-white h-full max-w-lg lg:max-w-none  w-[98vw] md:w-full bg-opacity-90 p-2 overflow-hidden"  > 
           <div
             className="absolute h-[70%] w-full flex flex-col gap-4 p-6 "
             style={{ left: loginStep === 0 ? "0" : "-100%" }}
@@ -209,7 +210,7 @@ export default function Login() {
           </div>
 
           <div
-            className="absolute w-full flex flex-col gap-4 p-4"
+            className="absolute w-full h-full flex flex-col gap-4 p-4"
             style={{ left: loginStep === 1 ? "0" : "100%" }}
 
           >

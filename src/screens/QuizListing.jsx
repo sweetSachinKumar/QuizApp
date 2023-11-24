@@ -105,8 +105,8 @@ export default function QuizListing() {
 
 
   return (
-    <div className="grid gap-4 p-4">
-      <div className="">
+    <div className="grid gap-4 p-4 max-w-[1200px] mx-auto">
+      <div className=" flex flex-wrap gap-4 mb-10 sm:mb-0">
         {selectedRow != null && (
           <Button
             variant="contained"
@@ -121,7 +121,7 @@ export default function QuizListing() {
         <Button
           variant="contained"
           color="secondary"
-          style={{ marginLeft: "10px" }}
+         
           onClick={() => {
             setOpen(true);
           }}
@@ -129,7 +129,8 @@ export default function QuizListing() {
           Create Quiz
         </Button>
       </div>
-      <div className="">
+      <div className="overflow-auto">
+      <div className="min-w-[782px] ">
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead
@@ -139,7 +140,7 @@ export default function QuizListing() {
             >
               <TableRow>
                 <TableCell>Select</TableCell>
-                <TableCell>Ttitle</TableCell>
+                <TableCell>Title</TableCell>
                 <TableCell>Pass Marks</TableCell>
                 <TableCell>Lesson to unLock</TableCell>
                 <TableCell>Created Date</TableCell>
@@ -149,7 +150,7 @@ export default function QuizListing() {
             </TableHead>
             <TableBody>
               {quizList.map((row) => (
-                <TableRow
+                <TableRow className="odd:bg-[#6e6b6b0f]"
                   key={row.title}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
@@ -192,6 +193,7 @@ export default function QuizListing() {
             </TableBody>
           </Table>
         </TableContainer>
+      </div>
       </div>
 
       {open && (
@@ -266,7 +268,7 @@ export default function QuizListing() {
                     </a>
                   </div>
 
-                  <div className="flex flex-col justify-center items-center text-md gap-y-4 text-white font-medium  bg-purple-600 rounded p-4 border-2 border-dashed border-purple-300 ">
+                  <div className="flex flex-col h-full justify-center items-center text-md gap-y-4 text-white font-medium  bg-purple-600 rounded p-4 border-2 border-dashed border-purple-300 ">
                     Upload the CSV to Create the Quiz in the given sample format
                     <label htmlFor="file">
                       <div className="text-white border border-white py-1 px-4 rounded flex gap-3 items-center justify-center cursor-pointer">
@@ -372,7 +374,8 @@ export default function QuizListing() {
 
               <div className="grid gap-4">
                 <div className="grid grid-cols-2 justify-center items-center w-full h-full gap-2   ">
-                  <div className="flex flex-col justify-center items-center text-md gap-y-4 text-white font-medium bg-gray-400 rounded p-4 border-2 border-dashed border-gray-200">
+                  {/* hey */}
+                  <div className="flex flex-col h-full justify-center items-center text-md gap-y-4 text-white font-medium bg-gray-400 rounded p-4 border-2 border-dashed border-gray-200">
                     Download Sample CSV file from here
                     <a href={`${GLOBAL_CONSTANTS?.backend_url}quiz/${selectedRow}/download_quiz`} >
                     <Button

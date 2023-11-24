@@ -66,11 +66,11 @@ export default function Users() {
   };
 
   return (
-    <div className='grid gap-4 p-4'>
+    <div className='grid gap-4 p-4 max-w-[1200px] mx-auto'>
 <div className='' >
 <Button variant='contained' color='secondary' onClick={()=>{setOpen(true)}} > Create User </Button>
 </div>
-<div className='' >
+<div className='overflow-auto' >
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead style={{background:"linear-gradient(1deg,#7b24d240 30%, #9c27b050)"}} >
@@ -85,6 +85,7 @@ export default function Users() {
         <TableBody>
           {usersList.map((row) => (
             <TableRow
+            className="odd:bg-[#6e6b6b0f]"
               key={row?.id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >

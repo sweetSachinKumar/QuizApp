@@ -66,8 +66,8 @@ export default function Profile() {
   className="flex flex-col items-center justify-center gap-10 m-2 p-4 rounded-lg" 
   style={{background:"rgba(255,255,255,0.3)",backdropFilter:"blur(80px)",transform:"rotateZ(-5deg)",border:"2px solid white"}}  
   >
-        <div className="text-5xl font-semibold "  >Account Details</div>
-        <div className="grid gap-4 w-[40vw]">
+        <div className="xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-semibold "  >Account Details</div>
+        <div className="grid gap-4 w-[70vw] md:w-[40vw] max-w-[700px]">
               <TextField
                 value={loginData?.user_name}
                 id="standard-basic"

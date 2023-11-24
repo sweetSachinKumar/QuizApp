@@ -20,7 +20,7 @@ export default function LessonIndex() {
 
   const LessonCards = ({id, title, access }) => {
     return (
-      <div className="max-h-[320px]">
+      <div className="max-h-[420px] sm:w-full max-w-[275px] w-full mx-auto shadow-lg shadow-fuchsia-700/30 transition hover:shadow-fuchsia-500/5">
         {access ? (
           <div className="shadow-lg flex flex-col h-full bg-gray-200 min-h-[250px] rounded-lg overflow-hidden outline outline-purple-300">
             <div className="grid gap-2" >
@@ -76,19 +76,13 @@ export default function LessonIndex() {
     access:PropTypes.bool.isRequired
   }
   return (
-    <div className="w-full h-full overflow-y-auto px-4 ">
+    <div className="w-full h-full overflow-y-auto sm:px-4 px-2 max-w-[1400px] mx-auto">
     <div className="text-3xl font-bold text-purple-800">
       Lessons
     </div>
     <Divider color="secondary" style={{margin:"10px 0px"}}  />
-      <div
-        className=" p-0 gap-5"
-        style={{
-          display: "grid",
-          gridTemplateColumns:
-            "repeat(auto-fill, minmax(min(240px, 100%), 1fr))",
-        }}
-      >
+      <div 
+        className="grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 sm:grid-cols-2 grid-cols-1 p-0 gap-5 my-12">
         {lessonsList?.map((o, index) => (
           <LessonCards id={o?.id} title={o?.title} access={!o?.locked} key={index} />
         ))}

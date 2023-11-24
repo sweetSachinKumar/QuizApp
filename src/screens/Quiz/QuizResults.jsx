@@ -77,11 +77,13 @@ export default function QuizResults({ questions ,pass ,total_score,total_marks})
       })}
       
     </div>
+    <div className="absolute bottom-0 left-0 w-screen h-[65px] sm:h-[9vh] bg-white mx-auto flex items-center justify-center ps-9">
       <Button color="secondary" className="justify-self-center w-[50vw] my-10 " style={{fontWeight:"semi-bold",fontSize:"16px"}} variant="contained" onClick={()=>{
         handleChangeClose()
       }} >
                 Close
           </Button>
+          </div>
   </div>
   );
 }

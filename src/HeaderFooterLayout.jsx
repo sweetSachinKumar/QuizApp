@@ -244,7 +244,7 @@ export default function HeaderFooterLayout({ Component }) {
           </ListItem>
         </DrawerFooter>
       </CustomDrawer>
-      <div className="py-4 overflow-y-hidden " style={{ flexGrow: 1, background: "#f5f5f5" }}>
+      <div className="py-4 overflow-y-hiddenss overflow-y-auto overflow-x-hidden  " style={{ flexGrow: 1, background: "#f5f5f5" }}>
         {Component} 
       </div>
     </Box>

@@ -53,8 +53,8 @@ export default function CreateLesson() {
             <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden mb-5">
                 <div className="px-6 py-4">
                     {/* <h2 className="text-2xl font-bold text-gray-800 mb-3">Create a New Lesson</h2> */}
-                    <div className="flex justify-between">
-                        <div>
+                    <div className="flex justify-between gap-5 flex-wrap">
+                        <div className="flex-1">
                             <div className="font-bold">Select Quiz to unlock</div>
                             <div className="py-2">
                                 <MutiSelect
@@ -68,7 +68,7 @@ export default function CreateLesson() {
                                 />
                             </div>
                         </div>
-                        <div className="w-full pl-10">
+                        <div className="flex-1 ">
                             <div className="font-bold">Enter Lesson Title</div>
                             <div className="py-2">
                                 <input
@@ -77,7 +77,7 @@ export default function CreateLesson() {
                                     value={title}
                                     onChange={(e) => setTitle(e.target.value)}
                                     placeholder="Enter Lesson Title"
-                                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    className="shadow appearance-none border rounded zs py-2 px-3 text-gray-700 leading-tight w-[320px] focus:outline-none focus:shadow-outline"
                                 />
                             </div>
                         </div>

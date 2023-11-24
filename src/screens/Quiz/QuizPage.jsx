@@ -18,6 +18,7 @@ import LoadingAnimation from "../../assets/animation_loading.json";
 import { useNavigate } from "react-router-dom";
 import PropTypes from 'prop-types';
 import QuizResults from "./QuizResults";
+import QuizTimer from "./QuizTimer";
 
 export default function QuizPage({ id, setValue }) {
   const { quizView } = useSelector((state) => state.data);
@@ -115,8 +116,9 @@ export default function QuizPage({ id, setValue }) {
     </> :
       <>
         <div className=" w-full flex flex-col gap-4 ">
-          <div className=" flex items-center justify-between font-custom_1 text-xl font-semibold">
-            <div>{quizView?.title}</div>
+          <div className=" flex items-center flex-wrap justify-between font-custom_1 text-xl font-semibold gap-6 sm:gap-0">
+            <div className="flex justify-between items-center w-full sm:w-auto"> <p>{quizView?.title}</p> <small className="sm:hidden text-[#7b1fa2]" >{activeQuestionIndex}/25</small></div>
+            <div> <QuizTimer seconds={1503} onSubmit={onSubmit} /> </div>
             <div className="flex gap-4" >
               <Button
                 variant="outlined"
@@ -184,9 +186,9 @@ export default function QuizPage({ id, setValue }) {
 
                     </RadioGroup>
                   </FormControl>
-                ) : (
+                ) :(
                   <></>
-                )}
+                )} 
               </div>
 
               <div className="flex justify-between">
